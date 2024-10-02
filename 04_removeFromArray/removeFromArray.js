@@ -28,12 +28,20 @@ const removeFromArray = function(...args) {
             inpArray.splice(location[0],1);
         } else if (matchCount > 1)
         {
+            /*
             let n = 1;
             while ( n > 0)
             {
                 inpArray.splice(location[0],1);
                 location = findItemInArray(inpArray, item);
                 n = location.length;
+            }
+                */
+            let spliceCount = 0;
+            for (index of location)
+            {
+                inpArray.splice(index - spliceCount,1);
+                spliceCount++;
             }
         }
     }
